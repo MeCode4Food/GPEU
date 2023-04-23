@@ -2,6 +2,9 @@
 
 This is an open source user interface (UI) for the Google Cloud Pub/Sub emulator. The UI allows you to interact with the emulator and simulate Pub/Sub messaging without using the Google Cloud Platform (GCP) console or command-line tools.
 
+This UI is made with Vite, React, and Tailwind CSS. It is based on the Google Cloud Pub/Sub emulator and the React framework.
+Additionally, the API used to interact with the emulator is based on the Google Cloud Pub/Sub REST API.
+
 ## Getting started
 
 To use the GCP PubSub Emulator UI, follow these steps:
