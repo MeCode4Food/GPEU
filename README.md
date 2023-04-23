@@ -27,6 +27,12 @@ To run the emulator, you can run `make env` to start the emulator and the UI. Th
 
 By default, the GCP PubSub Emulator UI connects to the Pub/Sub emulator running on `localhost:8085`. If you want to use a different host or port, you can change the configuration by editing the `.env` file.
 
+For example:
+```env
+VITE_DEFAULT_PROJECT=project-test
+VITE_PUBSUB_EMULATOR_HOST=localhost:8086
+```
+
 ## Contributing
 
 We welcome contributions to the GCP PubSub Emulator UI. If you want to fix a bug, add a feature, or improve the documentation, please follow these steps:
