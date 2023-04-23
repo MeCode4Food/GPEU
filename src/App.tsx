@@ -1,33 +1,32 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react"
+import CardList from "./components/cardlist"
+import { useNavigate } from "react-router-dom"
 
 function App() {
-  const [count, setCount] = useState(0)
+  const cc = [
+    {
+      id: "1",
+      value: import.meta.env.VITE_DEFAULT_PROJECT,
+      title: import.meta.env.VITE_DEFAULT_PROJECT
+    },
+  ]
+  const navigate = useNavigate()
+  const [cards, setCards] = useState(cc)
 
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="App bg-gray-100 min-h-screen">
+      <h1 className="text-2xl font-bold mb-4">Card List</h1>
+      <div className="max-w-4xl mx-auto px-4 py-8">
+        <CardList
+          cards={cards}
+          onClick={(value) => {
+            navigate(`/project/${value}`)
+          }}
+          onRemove={(id) => {
+            setCards(cards.filter((card) => card.id !== id))
+          }}
+        />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </div>
   )
 }

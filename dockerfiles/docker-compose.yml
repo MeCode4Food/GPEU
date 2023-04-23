@@ -1,0 +1,14 @@
+version: "3.7"
+services:
+
+  firebase:
+    image: mecode4food/firebase-emulator:1.0.0
+    environment:
+      - GCP_PROJECT=project-test
+      - PUBSUB_PORT=8086
+    ports:
+      - 8083:4000
+      - 8086:8086
+    command: ["pubsub"]
+    volumes:
+      - ../data:/data/firebase_backup
