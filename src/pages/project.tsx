@@ -19,7 +19,7 @@ const Project: React.FC<ProjectProps> = ({ projectId }) => {
   const [lSubscriptions, setLSubscriptions] = useState<Subscription[]>([])
   const [iTopic, setITopic] = useState<string>('')
   const [iSubscription, setISubscription] = useState<string>('')
-  const [pubMessage, setPubMessage] = useState<string>('test')
+  const [pubMessage, setPubMessage] = useState<string>('')
   const [pulledMessages, setPulledMessages] = useState<ReceivedMessage[]>([])
 
   const loadTopics = async () => {
