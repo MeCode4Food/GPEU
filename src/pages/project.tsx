@@ -95,6 +95,10 @@ const Project: React.FC<ProjectProps> = ({ projectId }) => {
     }
   }
 
+  const goBackOnClick = () => {
+    window.history.back()
+  }
+
   const loadSubscriptions = async (topicShort: string) => {
     try {
       const client = newClient(sProject)
@@ -168,7 +172,7 @@ const Project: React.FC<ProjectProps> = ({ projectId }) => {
     <div className="project container mx-auto min-h-[100vh]">
       <div className="flex flex-col">
         <div className="row flex items-start m-8">
-          <div className="w-1/7"><button className=" bg-blue-500 hover:bg-blue-600 mr-2 text-white font-bold rounded py-2 px-4">Go Back</button></div>
+          <div className="w-1/7"><button className=" bg-blue-500 hover:bg-blue-600 mr-2 text-white font-bold rounded py-2 px-4" onClick={goBackOnClick}>Go Back</button></div>
           <div className="flex-1 mx-4 max-w-2xl text-3xl font-bold mb-4">Project: {projectId}</div>
         </div>
         <div className="row flex items-start">
