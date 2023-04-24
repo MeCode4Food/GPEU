@@ -1,6 +1,6 @@
 # GCP PubSub Emulator UI
-![image](https://user-images.githubusercontent.com/25502412/233831043-37a584cf-39e6-42a5-b57c-207055dc17ee.png)
-![image](https://user-images.githubusercontent.com/25502412/233831098-ebcc254d-e085-4e6d-9955-40940e0f9ae8.png)
+![image](https://user-images.githubusercontent.com/25502412/234051566-63ba1bc3-2ba5-4512-bdca-895a0c5b7bce.png)
+![image](https://user-images.githubusercontent.com/25502412/234051485-237f2c49-d502-47ab-925c-19d11e45cc91.png)
 
 This is an open source user interface (UI) for the Google Cloud Pub/Sub emulator. The UI allows you to interact with the emulator and simulate Pub/Sub messaging without using the Google Cloud Platform (GCP) console or command-line tools.
 
@@ -21,17 +21,10 @@ You should see the main page of the UI, which lets you create, delete, list, and
 
 ### Run emulator
 
-To run the emulator, you can run `make env` to start the emulator and the UI. The emulator will run on port 8086 and the UI will run on port 8083.
+To run the emulator, you can run `make env` to start the emulator and the UI. The emulator will run on port 8086 and the UI (for the firebase tools) will run on port 8083.
 
-## Configuration
-
-By default, the GCP PubSub Emulator UI connects to the Pub/Sub emulator running on `localhost:8085`. If you want to use a different host or port, you can change the configuration by editing the `.env` file.
-
-For example:
-```env
-VITE_DEFAULT_PROJECT=project-test
-VITE_PUBSUB_EMULATOR_HOST=localhost:8086
-```
+## Build & Run app as an image
+Run `make image` to build the image and `make runimage` to run the image locally. The app will be available on port 8080.
 
 ## Contributing
 
